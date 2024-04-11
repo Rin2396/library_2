@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-11 15:51+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: library_app/admin.py:9
+msgid "recency"
+msgstr "новизна"
+
+#: library_app/admin.py:16
+msgid "Created in the last 10 years"
+msgstr "созданы за последние 10 лет"
+
+#: library_app/admin.py:17
+msgid "Created in the last 20 years"
+msgstr "созданы за последние 20 лет"
+
+#: library_app/models.py:20
+msgid "Date and time is bigger than current!"
+msgstr "Время и дата больше текущих!"
+
+#: library_app/models.py:27
+msgid "created"
+msgstr "создано"
+
+#: library_app/models.py:38
+msgid "modified"
+msgstr "изменено"
+
+#: library_app/models.py:52
+msgid "full_name"
+msgstr "полное имя"
+
+#: library_app/models.py:54 library_app/models.py:79 library_app/models.py:106
+#: library_app/models.py:110 library_app/models.py:123
+msgid "book"
+msgstr "книга"
+
+#: library_app/models.py:62 library_app/models.py:124
+msgid "author"
+msgstr "автор"
+
+#: library_app/models.py:63 library_app/models.py:98
+msgid "authors"
+msgstr "авторы"
+
+#: library_app/models.py:66
+msgid "name"
+msgstr "имя"
+
+#: library_app/models.py:67 library_app/models.py:92
+msgid "description"
+msgstr "описание"
+
+#: library_app/models.py:75 library_app/models.py:111
+msgid "genre"
+msgstr "жанр"
+
+#: library_app/models.py:76 library_app/models.py:97
+msgid "genres"
+msgstr "жанры"
+
+#: library_app/models.py:80
+msgid "magazine"
+msgstr "журнал"
+
+#: library_app/models.py:86
+msgid "Year is bigger than current!"
+msgstr "год больше текущего"
+
+#: library_app/models.py:91
+msgid "title"
+msgstr "название"
+
+#: library_app/models.py:93
+msgid "volume"
+msgstr "объем"
+
+#: library_app/models.py:94
+msgid "type"
+msgstr "тип"
+
+#: library_app/models.py:95
+msgid "year"
+msgstr "год"
+
+#: library_app/models.py:107
+msgid "books"
+msgstr "книги"
+
+#: library_app/models.py:118
+msgid "relationship book genre"
+msgstr "связь книга жанр"
+
+#: library_app/models.py:119
+msgid "relationships book genre"
+msgstr "связи книга жанр"
+
+#: library_app/models.py:131
+msgid "relationship book author"
+msgstr "связь книга автор"
+
+#: library_app/models.py:132
+msgid "relationships book author"
+msgstr "связи книга автор"
