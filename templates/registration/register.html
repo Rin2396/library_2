@@ -3,6 +3,7 @@
 {% if request.user.is_authenticated %}
     <p>You are already logged in</p>
 {% else %}
+    <h4>{{errors}}</h4>
     <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         <label for="username">Username</label><br>

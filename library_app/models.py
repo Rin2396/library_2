@@ -3,6 +3,7 @@ from uuid import uuid4
 from datetime import datetime, date, timezone
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.conf.global_settings import AUTH_USER_MODEL
 
 def get_datetime():
     return datetime.now(timezone.utc)
@@ -135,3 +136,27 @@ class BookAuthor(UUIDMixin, CreatedMixin):
         )
         verbose_name = _('relationship book author')
         verbose_name_plural = _('relationships book author')
+
+class Client(UUIDMixin, CreatedMixin, ModifiedMixin):
+    money = models.DecimalField(
+        verbose_name=_('money'),
+        decimal_places=2,
+        max_digits=11,
+        default=0,
+    )
+    user = models.OneToOneField(AUTH_USER_MODEL, verbose_name=_('user'), on_delete=models.CASCADE)
+    books = models.ManyToManyField(Book, through='BookClient', verbose_name=_('books'))
+
+    class Meta:
+        db_table = '"library"."client"'
+        verbose_name = _('client')
+        verbose_name_plural = _('clients')
+
+class BookClient(UUIDMixin, CreatedMixin):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, verbose_name=_('book'))
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name=_('client'))
+
+    class Meta:
+        db_table = '"library"."book_client"'
+        verbose_name = _('relationship book client')
+        verbose_name_plural = _('relationships book client')

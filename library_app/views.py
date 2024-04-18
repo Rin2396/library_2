@@ -3,7 +3,8 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.core.paginator import Paginator
 
-from .models import Book, Genre, Author
+from .models import Book, Genre, Author, Client
+from .forms import TestForm, Registration
 
 def home_page(request):
     return render(
@@ -53,3 +54,34 @@ def create_view(model_class, context_name, template):
 book_view = create_view(Book, 'book', 'entities/book.html')
 genre_view = create_view(Genre, 'genre', 'entities/genre.html')
 author_view = create_view(Author, 'author', 'entities/author.html')
+
+def test_form(request):
+    context = {'form': TestForm()}
+    for key in ('text', 'number', 'choice'):
+        context[key] = request.GET.get(key, f'{key} is not provided')
+    return render(
+        request,
+        'pages/test_form.html',
+        context,
+    )
+
+def register(request):
+    errors = ''
+    if request.method == 'POST':
+        form = Registration(request.POST)
+        if form.is_valid():
+            user = form.save()
+            Client.objects.create(user=user)
+        else:
+            errors = form.errors
+    else:
+        form = Registration()
+
+    return render(
+        request,
+        'registration/register.html',
+        {
+            'form': form,
+            'errors': errors,
+        }
+    )
